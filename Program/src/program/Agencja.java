@@ -34,19 +34,19 @@ public class Agencja {
     int menu5 = 1;
     int[] tab = {f_monomer, f_polimer, ww300, OWV, rollup, ban_lamin, ban_powl, f_wylewana_3m, papier_130, lam_monomer, lam_polimer, lam_wylewany_3m};
 
-    void wypiszMaterialy() {
+    void printMaterials() {
         System.out.println("Dostępne materiały:\n1. Folia monomer\n2. Folia polimer\n3. WW300\n4. OWV\n5. Rollup\n6. Baner laminowany\n7. Baner powlekany\n8. Folia wylewana 3m\n9. Papier 130g");
     }
 
-    void wypiszLaminaty() {
+    void printLaminates() {
         System.out.println("1. Laminat monomerowy\n2. Laminat polimerowy\n3. Laminat wylewany 3m");
     }
 
-    void setDlugosc(double dl) {
+    void setLength(double dl) {
         this.dl = dl;
     }
 
-    void setSzerokosc(double szer) {
+    void setWidth(double szer) {
         this.szer = szer;
     }
 
