@@ -15,17 +15,17 @@ public class Program {
             int wartosc = buffor.nextInt(); // Przypisanie wartości z wejścia
             switch (wartosc) {
                 case 1:
-                    System.out.println("Wybrałeś opcje Agencja");
+                    System.out.println("Wybrałeś opcję Agencja");
                     Agencja agent = new Agencja();
 
                     System.out.println("Podaj długość wydruku");
-                    agent.setDlugosc(buffor.nextDouble());
+                    agent.setLength(buffor.nextDouble());
 
                     System.out.println("Podaj szerokość wydruku");
-                    agent.setSzerokosc(buffor.nextDouble());
+                    agent.setWidth(buffor.nextDouble());
 
                     System.out.println("Podaj rodzaj materiału");
-                    agent.wypiszMaterialy();
+                    agent.printMaterials();
                     agent.menu1 = buffor.nextInt(); // Wybrany materiał
 
                     System.out.println("Czy doliczyć laminowanie? tak = 1 lub nie = 2"); // zgoda na laminowanie
@@ -33,7 +33,7 @@ public class Program {
                     switch (agent.menu2) {
                         case 1:
                             System.out.println("Do wyboru mamy:");
-                            agent.wypiszLaminaty();
+                            agent.printLaminates();
                             System.out.println("Podaj numer laminatu");
                             agent.menu3 = agent.tab[8 + buffor.nextInt()];
                             break;
@@ -69,16 +69,16 @@ public class Program {
 
                 case 2:
 
-                    System.out.println("Wybrałeś opcje Klient");
+                    System.out.println("Wybrałeś opcję Klient");
                     Klient klient = new Klient();
                     System.out.println("Podaj długość wydruku");
-                    klient.setDlugosc(buffor.nextDouble());
+                    klient.setLength(buffor.nextDouble());
 
                     System.out.println("Podaj szerokość wydruku");
-                    klient.setSzerokosc(buffor.nextDouble());
+                    klient.setWidth(buffor.nextDouble());
 
                     System.out.println("Podaj rodzaj materiału");
-                    klient.wypiszMaterialy();
+                    klient.printMaterials();
                     klient.menu1 = buffor.nextInt(); // Wybrany materiał
 
                     System.out.println("Czy doliczyć laminowanie? tak = 1 lub nie = 2"); // zgoda na laminowanie
@@ -86,7 +86,7 @@ public class Program {
                     switch (klient.menu2) {
                         case 1:
                             System.out.println("Do wyboru mamy:");
-                            klient.wypiszLaminaty();
+                            klient.printLaminates();
                             System.out.println("Podaj numer laminatu");
                             int laminat = buffor.nextInt();
                             klient.menu3 = klient.tab[8 + laminat];
