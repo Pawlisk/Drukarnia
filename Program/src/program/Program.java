@@ -1,5 +1,7 @@
 package program;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Program {
@@ -8,15 +10,16 @@ public class Program {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        PriceManager priceManager = new PriceManager("prices.xml");
         while (true) {
-            System.out.println("Wersja kalkulatora 0.1");
-            System.out.println("Wpisz wybrany numer:\n1. Agencja\n2. Klient");
-            Scanner buffor = new Scanner(System.in);  // Create a Scanner object
-            int wartosc = buffor.nextInt(); // Przypisanie wartości z wejścia
+            System.out.println("Wersja kalkulatora 0.2");
+            System.out.println("Wpisz wybrany numer:\n1. Agencja\n2. Klient\n3. Edytuj ceny");
+            Scanner buffor = new Scanner(System.in);
+            int wartosc = buffor.nextInt();
             switch (wartosc) {
                 case 1:
                     System.out.println("Wybrałeś opcję Agencja");
-                    Agencja agent = new Agencja();
+                    Agencja agent = new Agencja(priceManager);
 
                     System.out.println("Podaj długość wydruku");
                     agent.setLength(buffor.nextDouble());
@@ -70,7 +73,7 @@ public class Program {
                 case 2:
 
                     System.out.println("Wybrałeś opcję Klient");
-                    Klient klient = new Klient();
+                    Klient klient = new Klient(priceManager);
                     System.out.println("Podaj długość wydruku");
                     klient.setLength(buffor.nextDouble());
 
@@ -121,11 +124,34 @@ public class Program {
 
                     break;
 
+                case 3:
+                    editPrices(priceManager, buffor);
+                    break;
+
                 default:
-                    System.out.println("Wybrana opcja to ani 1, ani 2");
+                    System.out.println("Wybrana opcja to ani 1, 2 ani 3");
             }
 
         }
 
+    }
+
+    private static void editPrices(PriceManager manager, Scanner scanner) {
+        List<String> keys = new ArrayList<>(manager.getKeys());
+        System.out.println("Dostępne pozycje cenowe:");
+        for (int i = 0; i < keys.size(); i++) {
+            String k = keys.get(i);
+            System.out.println((i + 1) + ". " + k + " = " + manager.getPrice(k));
+        }
+        System.out.println("Podaj numer pozycji do edycji lub 0 aby wrócić:");
+        int opt = scanner.nextInt();
+        if (opt > 0 && opt <= keys.size()) {
+            String key = keys.get(opt - 1);
+            System.out.println("Nowa cena dla " + key + ":");
+            int val = scanner.nextInt();
+            manager.setPrice(key, val);
+            manager.save();
+            System.out.println("Zapisano.");
+        }
     }
 }

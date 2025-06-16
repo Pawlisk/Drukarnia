@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Price configuration</comment>
+<entry key="agencja.f_monomer">25</entry>
+<entry key="agencja.f_polimer">40</entry>
+<entry key="agencja.ww300">45</entry>
+<entry key="agencja.OWV">30</entry>
+<entry key="agencja.rollup">30</entry>
+<entry key="agencja.ban_lamin">25</entry>
+<entry key="agencja.ban_powl">28</entry>
+<entry key="agencja.f_wylewana_3m">70</entry>
+<entry key="agencja.papier_130">25</entry>
+<entry key="agencja.lam_monomer">15</entry>
+<entry key="agencja.lam_polimer">25</entry>
+<entry key="agencja.lam_wylewany_3m">60</entry>
+<entry key="klient.f_monomer">50</entry>
+<entry key="klient.f_polimer">60</entry>
+<entry key="klient.ww300">60</entry>
+<entry key="klient.OWV">40</entry>
+<entry key="klient.rollup">40</entry>
+<entry key="klient.ban_lamin">45</entry>
+<entry key="klient.ban_powl">50</entry>
+<entry key="klient.f_wylewana_3m">100</entry>
+<entry key="klient.papier_130">40</entry>
+<entry key="klient.lam_monomer">30</entry>
+<entry key="klient.lam_polimer">40</entry>
+<entry key="klient.lam_wylewany_3m">80</entry>
+</properties>
